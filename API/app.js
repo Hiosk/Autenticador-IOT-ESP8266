@@ -13,6 +13,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/autenticar', (req, res) => {
+    console.log(req.body)
     db.autenticar(req, res);
 })
 

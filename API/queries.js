@@ -8,6 +8,9 @@ const pool = new Pool({
 })
 
 const autenticar = (req, res) => {
+    if(req.body.cpf.length == 12) {
+        req.body.cpf = req.body.cpf.slice(0, -1)
+    }
     const cpf = parseInt(req.body.cpf)
     const senha = parseInt(req.body.senha)
 
