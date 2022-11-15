@@ -2,8 +2,18 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+const db = require('./queries');
+
+app.use(express.urlencoded({
+    extended: true
+}))
+
 app.get('/', (req, res) => {
-    res.send('Hello indústria 4.0!')
+    res.send('Hi indústria 4.0')
+})
+
+app.post('/autenticar', (req, res) => {
+    db.autenticar(req, res);
 })
 
 app.listen(port, () => {
